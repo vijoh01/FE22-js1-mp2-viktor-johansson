@@ -4,6 +4,10 @@ let namnInmatning = document.querySelector('#namn');
 let spel = document.querySelector('.game');
 let playerName = "";
 
+var gameMusic = new Audio("/FE22-js1-mp2-viktor-johansson/audio/vijoh - gameaudio.mp3");
+gameMusic.volume = 0.3;
+var roundSound;
+
 start.addEventListener('click', (e) => {
     if (namnInmatning.value === "") {
         return;
@@ -13,6 +17,7 @@ start.addEventListener('click', (e) => {
     spel.style.display = "flex";
     document.body.display = "block";
     playerName = namnInmatning.value;
+    gameMusic.play();
 });
 
 let computerImg = document.querySelectorAll('.computer img');
@@ -38,6 +43,7 @@ function resetSpin() {
         computerH1[1].style.color = "rgba(255, 255, 255, 0)";
         computerH1[0].style.color = "rgba(255, 255, 255, 0)";
         computerH1[1].innerText = "You won!";
+        gameMusic.volume = "0.3";
     }, 2000);
 }
 
@@ -62,7 +68,8 @@ function reset() {
 }
 
 function spin() {
-    intervalID = setInterval(spinChoices, (Math.random(100)*100) + 30);
+    gameMusic.play();
+    intervalID = setInterval(spinChoices, (Math.random(50)*50) + 30);
     setTimeout(() => {
         msgNbr++;
         if (msgNbr >= 3) {
@@ -71,9 +78,15 @@ function spin() {
         if (getWinner() == "player") {
             computerH1[1].style.color = "white";
             playerScore++;
+            roundSound = new Audio("/FE22-js1-mp2-viktor-johansson/audio/win sound.mp3");
+            roundSound.volume = 0.1;
+            roundSound.play();
         } else if (getWinner() == "computer"){
             computerH1[0].style.color = "white";
             computerH1[0].innerText = "Computer: " + winMsg[msgNbr];
+            roundSound = new Audio("/FE22-js1-mp2-viktor-johansson/audio/game over.mp3");
+            roundSound.volume = 0.1;
+            roundSound.play();
             computerScore++;
         } else {
             computerH1[1].innerText = "Draw";
@@ -91,13 +104,21 @@ function spin() {
 }
 
 function winnerMessage() {
+    roundSound.volume = 0.5;
     if (computerScore > playerScore) {
         title.innerText = "You Loose."
+        roundSound = new Audio("/FE22-js1-mp2-viktor-johansson/audio/game over.mp3");
+        roundSound.play();
     } else if (computerScore == playerScore) {
         title.innerText = "Draw."
+        roundSound = new Audio("/FE22-js1-mp2-viktor-johansson/audio/game over.mp3");
+        roundSound.play();
     } else {
         title.innerText = "You Win!"
+        roundSound = new Audio("/FE22-js1-mp2-viktor-johansson/audio/win sound.mp3");
+        roundSound.play();
     }
+    gameMusic.play();
 }
 
 let computer;
@@ -107,10 +128,11 @@ function spinChoices() {
     if (imgNr > 2) {
         imgNr = 0;
     }
-    if (times >= 10 && times < 20) {
+    if (times >= 5 && times < 12) {
         clearInterval(intervalID);
         intervalID = setInterval(spinChoices, ((Math.random(100)*100) + 50));
-    } else if (times >= 20) {
+
+    } else if (times >= 12) {
         clearInterval(intervalID);
         intervalID = setInterval(spinChoices, ((Math.random(100)*100) + 100));
     }
@@ -120,9 +142,12 @@ function spinChoices() {
     computer = list[imgNr];
     imgNr++;
     times++;
+    
     var snd = new Audio("/FE22-js1-mp2-viktor-johansson/audio/spin.wav");
-    snd.volume = 0.1;
+    snd.volume = 0.07;
     snd.play();
+
+    
 }
 
 let select = document.querySelector('.player-choices');
@@ -137,6 +162,7 @@ select.addEventListener('click', (e) => {
         selected = e.target;
         computerImg[1].src = e.target.src;
         currItem = e.target.id;
+        gameMusic.volume = "0.1";
         spin();
         isSelected = true;
     }

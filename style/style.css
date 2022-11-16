@@ -113,7 +113,7 @@ input {
 }
 
 .score {
-    position: absolute;
+    position: fixed;
     margin-right: 60%;
 }
 
