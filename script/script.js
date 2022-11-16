@@ -71,6 +71,7 @@ function reset() {
     computerScore = 0;
     scoreboard[1].innerText = "";
     scoreboard[2].innerText = "";
+    title.style.padding = "0";
     resetGame = false;
 }
 
@@ -126,6 +127,7 @@ function winnerMessage() {
         roundSound = new Audio("/FE22-js1-mp2-viktor-johansson/audio/win sound.mp3");
         roundSound.play();
     }
+    title.style.padding = "0 5rem 0 5rem";
     gameMusic.play();
 }
 
