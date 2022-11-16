@@ -74,7 +74,7 @@ input {
 .game {
     display: none;
     background: var(--bg-blue);
-    width: 80%;
+    width: 45rem;
     flex-direction: column;
     text-align: center;
     align-items: center;
@@ -119,7 +119,8 @@ input {
 
 .score {
     position: fixed;
-    margin-right: 60%;
+    left: 5%;
+    top: 15%;
 }
 
 .title {
