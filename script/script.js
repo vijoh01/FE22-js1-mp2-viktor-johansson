@@ -127,7 +127,7 @@ function winnerMessage() {
         roundSound = new Audio("/FE22-js1-mp2-viktor-johansson/audio/win sound.mp3");
         roundSound.play();
     }
-    title.style.padding = "0 5rem 0 5rem";
+    title.style.padding = "0 15rem 0 15rem";
     gameMusic.play();
 }
 
