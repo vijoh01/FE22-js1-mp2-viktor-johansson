@@ -114,14 +114,13 @@ function spinChoices() {
         clearInterval(intervalID);
         intervalID = setInterval(spinChoices, ((Math.random(100)*100) + 100));
     }
-    console.log("test");
     
-    computerImg[0].src = `/FE22-js1-mp2-viktor-johansson/img${imgNr}.png`;
+    computerImg[0].src = `/FE22-js1-mp2-viktor-johansson/img/img${imgNr}.png`;
     let list = ["sten", "sax", "påse"];
     computer = list[imgNr];
     imgNr++;
     times++;
-    var snd = new Audio("../audio/spin.wav");
+    var snd = new Audio("/FE22-js1-mp2-viktor-johansson/audio/spin.wav");
     snd.volume = 0.1;
     snd.play();
 }
