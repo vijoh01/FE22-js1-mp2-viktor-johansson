@@ -115,7 +115,7 @@ function spinChoices() {
         intervalID = setInterval(spinChoices, ((Math.random(100)*100) + 100));
     }
     
-    computerImg[0].src = `../img/img${imgNr}.png`;
+    computerImg[0].src = `/FE22-js1-mp2-viktor-johansson/img${imgNr}.png`;
     let list = ["sten", "sax", "påse"];
     computer = list[imgNr];
     imgNr++;
