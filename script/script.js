@@ -18,9 +18,8 @@ start.addEventListener('click', (e) => {
     document.body.display = "block";
     playerName = namnInmatning.value;
     gameMusic.play();
-    selectImg.forEach((img) => {
-        img.classList.add("hoverable");
-    })
+
+    select.classList.add("hoverable");
 });
 
 let computerImg = document.querySelectorAll('.computer img');
