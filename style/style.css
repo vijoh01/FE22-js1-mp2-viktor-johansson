@@ -12,7 +12,10 @@
     box-sizing: border-box;
 }
 
-h1, h2, input, label {
+h1,
+h2,
+input,
+label {
     color: white;
 }
 
@@ -56,7 +59,8 @@ form button {
     background: var(--bg-start-button);
 }
 
-label, input {
+label,
+input {
     width: 20rem;
     margin: 1.4rem;
 }
@@ -114,7 +118,6 @@ input {
 
 .player-choices {
     display: flex;
-    border-top: black solid 1px;
 }
 
 .hoverable img:hover {
@@ -144,10 +147,9 @@ input {
     width: 15rem;
     height: 10rem;
     padding: 1rem;
-    
+
     background-color: #414770;
     background-size: contain;
     object-fit: contain;
     background-color: rgba(255, 255, 255, 0.308);
 }
-
