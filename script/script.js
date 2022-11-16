@@ -18,6 +18,9 @@ start.addEventListener('click', (e) => {
     document.body.display = "block";
     playerName = namnInmatning.value;
     gameMusic.play();
+    selectImg.forEach((img) => {
+        img.classList.add("hoverable");
+    })
 });
 
 let computerImg = document.querySelectorAll('.computer img');
@@ -44,7 +47,10 @@ function resetSpin() {
         computerH1[0].style.color = "rgba(255, 255, 255, 0)";
         computerH1[1].innerText = "You won!";
         gameMusic.volume = "0.3";
+        select.classList.add("hoverable");
+
     }, 2000);
+    
 }
 
 let winMsg = ["I'm the winner!", "I'm better.", "I'm Stronger", "You cant beat me!"]
@@ -100,6 +106,7 @@ function spin() {
         scoreboard[1].innerText = playerName + ": " + playerScore;
         scoreboard[2].innerText = "Computer: " + computerScore;
         resetSpin();
+        
     }, spinDelay);
 }
 
@@ -149,7 +156,6 @@ function spinChoices() {
 
     
 }
-
 let select = document.querySelector('.player-choices');
 let isSelected = false;
 let selected;
@@ -163,6 +169,7 @@ select.addEventListener('click', (e) => {
         computerImg[1].src = e.target.src;
         currItem = e.target.id;
         gameMusic.volume = "0.1";
+        select.classList.remove("hoverable");
         spin();
         isSelected = true;
     }

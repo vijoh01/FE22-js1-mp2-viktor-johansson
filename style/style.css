@@ -117,6 +117,11 @@ input {
     border-top: black solid 1px;
 }
 
+.hoverable img:hover {
+    cursor: crosshair;
+    padding: 2rem;
+}
+
 .score {
     position: fixed;
     left: 5%;
