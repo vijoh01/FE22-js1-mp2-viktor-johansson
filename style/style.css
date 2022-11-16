@@ -94,7 +94,12 @@ input {
 .computer {
     display: flex;
     flex-direction: column;
-    
+    justify-content: center;
+    align-items: center;
+}
+
+.computer h1 {
+    width: 100%;
 }
 
 .computer img {

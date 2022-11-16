@@ -104,7 +104,7 @@ function spin() {
 }
 
 function winnerMessage() {
-    roundSound.volume = 0.5;
+    roundSound.volume = 0.3;
     if (computerScore > playerScore) {
         title.innerText = "You Loose."
         roundSound = new Audio("/FE22-js1-mp2-viktor-johansson/audio/game over.mp3");
