@@ -141,6 +141,7 @@ input {
     font-size: 10rem;
     height: 12rem;
     background-color: black;
+    padding: 0 5rem 0 5rem;
 }
 
 .player-choices img {
