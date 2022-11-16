@@ -78,7 +78,7 @@ input {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
 
 }
 
@@ -94,11 +94,12 @@ input {
 .computer {
     display: flex;
     flex-direction: column;
+    
 }
 
 .computer img {
     width: 45rem;
-    height: 40vh;
+    height: 30vh;
     padding: 0 16rem 0 16rem;
     background-color: #414770;
     background-size: contain;
