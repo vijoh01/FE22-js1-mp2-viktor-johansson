@@ -5,7 +5,7 @@ let spel = document.querySelector('.game');
 let playerName = "";
 
 var gameMusic = new Audio("/FE22-js1-mp2-viktor-johansson/audio/vijoh - gameaudio.mp3");
-gameMusic.volume = 0.3;
+gameMusic.volume = 0.22;
 var roundSound;
 
 start.addEventListener('click', (e) => {
@@ -54,7 +54,7 @@ function resetSpin() {
 
 }
 
-let winMsg = ["I'm the winner!", "I'm better.", "I'm Stronger", "You cant beat me!"]
+let winMsg = ["You can't defeat me!", "I'm better.", "I'm Stronger"]
 let playerScore = 0;
 let computerScore = 0;
 let resetGame = false;
@@ -115,7 +115,7 @@ function spin() {
 function winnerMessage() {
     roundSound.volume = 0.3;
     if (computerScore > playerScore) {
-        title.innerText = "You Loose."
+        title.innerText = "You Lose."
         roundSound = new Audio("/FE22-js1-mp2-viktor-johansson/audio/game over.mp3");
         roundSound.play();
     } else if (computerScore == playerScore) {
